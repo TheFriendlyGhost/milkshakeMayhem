@@ -1,0 +1,38 @@
+<h1>Milkshake Madness!</h1>
+
+<div class = "row">
+  <div class = "holder_left">
+    <h2>Milkshakes that are not drank</h2>  
+    <ul>
+      {{#each milkshakes}}
+        {{#unless drank}}
+          {{> milkshakes/milkshake-block drank=false}}
+        {{/unless}}
+      {{/each}}
+    </ul>
+  </div>
+
+  <div class = "holder_right">
+    <h2>Milkshakes that are drank</h2>
+    <ul>
+      {{#each milkshakes}}
+        {{#if drank}}
+          {{> milkshakes/milkshake-block drank=true}}
+        {{/if}}
+      {{/each}}
+    </ul>
+  </div>
+</div>
+
+<br><br>
+
+<h2>Add a Milkshake</h2>
+<form class="create-form">
+
+  <div class="form-group">
+    <label for="ca">Milkshake Name:</label>
+    <input type="text" id="ca" name="name">
+  </div>
+
+  <button type="submit">Add Milkshake</button>
+</form>
